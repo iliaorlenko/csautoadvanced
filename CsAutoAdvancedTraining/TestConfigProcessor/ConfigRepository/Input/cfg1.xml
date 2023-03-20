@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<browser name="Chrome">
+		<user role="admin">
+			<login>administrator</login>
+			<password>12345</password>
+			<test>check role</test>
+			<test>check admin panel</test>
+		</user>
+		<user role="editor">
+			<login>user1</login>
+			<password>5678</password>
+			<test>check login</test>
+		</user>
+	</browser>
+	<browser name="Firefox">
+		<user role="guest">
+			<login>guestLogin</login>
+			<test>check feedback form</test>
+		</user>
+		<user role="editor">
+			<login>user2</login>
+			<password>5678</password>
+			<test>check login</test>
+		</user>
+	</browser>
+	<browser name="Edge">
+		<user role="admin">
+			<login>administrator</login>
+			<password>12345</password>
+			<test>check landing</test>
+			<test>check feedback form</test>
+		</user>
+		<user role="admin">
+			<login>administrator</login>
+			<password>12345</password>
+			<test>check add editor</test>
+			<test>check remove editor</test>
+		</user>
+	</browser>
+</config>
