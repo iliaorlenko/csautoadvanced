@@ -16,8 +16,9 @@ namespace TestConfiguration.Repositories
     {
         public Config GetConfig()
         {
+            var filePath = Directory.GetFiles(ConfigurationManager.AppSettings["inputPath"], "*.xml")[0];
+            var configFile = new FileInfo(filePath);
             var xmlSerializer = new XmlSerializer(typeof(XmlConfig));
-            var configFile = new FileInfo(Directory.GetFiles(Path.GetDirectoryName(ConfigurationManager.AppSettings["inputPath"]), "*.xml")[0]);
 
             using (var fileStream = File.Open(configFile.FullName, FileMode.Open))
             {

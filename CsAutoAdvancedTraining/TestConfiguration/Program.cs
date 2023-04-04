@@ -14,7 +14,7 @@ namespace TestConfiguration
     {
         static void Main(string[] args)
         {
-            //Get XML and convert into different JSONs per Browser
+            //Get XML
             IRepository repo = new XmlRepository();
             Config config = repo.GetConfig();
 
@@ -22,8 +22,8 @@ namespace TestConfiguration
             Console.WriteLine("Printed list of incorrect browsers:");
             Console.WriteLine(string.Join("\n", config.GetIncorrectBrowsers()));
 
+            //Convert XML into different JSONs per Browser
             repo.WriteConfig(config);
-
 
             //Get JSON and convert into different XMLs per Browser
             repo = new JsonRepository();

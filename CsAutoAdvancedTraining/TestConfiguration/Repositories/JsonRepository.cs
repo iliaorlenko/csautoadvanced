@@ -16,7 +16,8 @@ namespace TestConfiguration.Repositories
     {
         public Config GetConfig()
         {
-            var configFile = new FileInfo(Directory.GetFiles(Path.GetDirectoryName(ConfigurationManager.AppSettings["inputPath"]), "*.json")[0]);
+            var filePath = Directory.GetFiles(ConfigurationManager.AppSettings["inputPath"], "*.json")[0];
+            var configFile = new FileInfo(filePath);
 
             using (var fileStream = File.Open(configFile.FullName, FileMode.Open))
             {
