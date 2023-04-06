@@ -3,10 +3,10 @@
 	<browser name="Chrome" version="107">
 		<user role="Guest">
 			<login>guestLogin</login>
-			<password>ytrewq</password>
+			<password>12A+</password>
 			<tests>
 				<test id="1">
-					<title>Chrome Test 01 - Guest</title>
+					<title>DataReadModuleTeSt-34.01</title>
 					<expected>Support answeres asap</expected>
 					<steps>
 						<step number="1">Go there</step>
@@ -20,7 +20,7 @@
 		</user>
 		<user role="Guest">
 			<login>user1</login>
-			<password>1qaz!QAZ</password>
+			<password>12A_</password>
 			<tests>
 				<test id="2">
 					<title>Chrome Test 02 - Guest</title>
@@ -46,7 +46,7 @@
 		</user>
 		<user role="Admin">
 			<login>administrator</login>
-			<password>1qaz!QAZ</password>
+			<password>1A_</password>
 			<tests>
 				<test id="4">
 					<title>Chrome Test 04 - Admin</title>
@@ -103,7 +103,7 @@
 	<browser name="Edge" version="105">
 		<user role="Admin">
 			<login>administrator</login>
-			<password>2wsx@WSX</password>
+			<password>2asd_+</password>
 			<tests>
 				<test id="8">
 					<title>Edge Test 01 - Admin 1</title>
