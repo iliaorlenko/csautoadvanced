@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+	<browser name="Chrome" version="107">
+		<user role="Guest">
+			<login>guestLogin</login>
+			<password>12A+</password>
+			<tests>
+				<test id="1">
+					<title>DataReadModuleTeSt-34.01</title>
+					<expected>Support answeres asap</expected>
+					<steps>
+						<step number="1">Go there</step>
+						<step number="2">Fill out the feedback form</step>
+						<step number="3">Forget to enter your contact email</step>
+						<step number="4">Click submit</step>
+						<step number="5">Wait forever</step>
+					</steps>
+				</test>
+			</tests>
+		</user>
+		<user role="Guest">
+			<login>user1</login>
+			<password>12A_</password>
+			<tests>
+				<test id="2">
+					<title>Chrome Test 02 - Guest</title>
+					<expected>App doesn't crash</expected>
+					<steps>
+						<step number="1">Go there</step>
+						<step number="2">Crack there</step>
+						<step number="3">Overload there</step>
+						<step number="4">Monkey mode there</step>
+					</steps>
+				</test>
+				<test id="3">
+					<title>Chrome Test 03 - Guest</title>
+					<expected>App doesn't crash</expected>
+					<steps>
+						<step number="1">Go there</step>
+						<step number="2">Crack there</step>
+						<step number="3">Overload there</step>
+						<step number="4">Monkey mode there</step>
+					</steps>
+				</test>
+			</tests>
+		</user>
+		<user role="Admin">
+			<login>administrator</login>
+			<password>1A_</password>
+			<tests>
+				<test id="4">
+					<title>Chrome Test 04 - Admin</title>
+					<expected>Everything works fine</expected>
+					<steps>
+						<step number="1">Go there</step>
+						<step number="2">Click there</step>
+					</steps>
+				</test>
+				<test id="5">
+					<title>Chrome Test 05 - Admin</title>
+					<expected>Everything works extremely fine</expected>
+					<steps>
+						<step number="1">Go hard there</step>
+						<step number="2">Click hard there</step>
+					</steps>
+				</test>
+			</tests>
+		</user>
+	</browser>
+	<browser name="Firefox" version="106">
+		<user role="Guest">
+			<login>guestLogin</login>
+			<tests>
+				<test id="6">
+					<title>Firefox Test 01 - Guest</title>
+					<expected>Support answeres ASAP</expected>
+					<steps>
+						<step number="1">Go there</step>
+						<step number="2">Fill out the feedback form</step>
+						<step number="3">Forget to enter your contact email</step>
+						<step number="4">Click submit</step>
+						<step number="5">Wait forever</step>
+					</steps>
+				</test>
+			</tests>
+		</user>
+		<user role="Editor">
+			<login>user2</login>
+				<tests>
+				<test id="7">
+					<title>Firefox Test 02 - Editor</title>
+					<expected>App doesn't crash</expected>
+					<steps>
+						<step number="1">Go there</step>
+						<step number="2">Crack there</step>
+						<step number="3">Overload there</step>
+						<step number="4">Monkey mode there</step>
+					</steps>
+				</test>
+			</tests>
+		</user>
+	</browser>
+	<browser name="Edge" version="105">
+		<user role="Admin">
+			<login>administrator</login>
+			<password>2asd_+</password>
+			<tests>
+				<test id="8">
+					<title>Edge Test 01 - Admin 1</title>
+					<expected>Bla bla test 1</expected>
+					<steps>
+						<step number="1">Bla 1-1-1</step>
+						<step number="2">Bla 1-1-2</step>
+					</steps>
+				</test>
+				<test id="9">
+					<title>Edge Test 02 - Admin 1</title>
+					<expected>Bla bla test 2</expected>
+					<steps>
+						<step number="1">Bla 1-2-1</step>
+						<step number="2">Bla 1-2-2</step>
+					</steps>
+				</test>
+			</tests>
+		</user>
+		<user role="Admin">
+			<login>administrator</login>
+			<password></password>
+			<tests>
+				<test id="10">
+					<title>Edge Test 03 - Admin 2</title>
+					<expected>Bla bla test 1</expected>
+					<steps>
+						<step number="1">Bla 2-1-1</step>
+						<step number="2">Bla 2-1-2</step>
+					</steps>
+				</test>
+				<test id="11">
+					<title>Edge Test 04 - Admin 2</title>
+					<expected>Bla bla test 2</expected>
+					<steps>
+						<step number="1">Bla 2-2-1</step>
+						<step number="2">Bla 2-2-2</step>
+					</steps>
+				</test>
+			</tests>
+		</user>
+	</browser>
+</config>
