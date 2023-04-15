@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TestConfiguration.Models;
-using TestConfiguration.Interfaces;
-using TestConfiguration.Repositories;
-using TestConfiguration.Extensions;
+using System.Configuration;
+using System.Reflection;
 
 namespace TestConfiguration
 {
@@ -14,29 +8,19 @@ namespace TestConfiguration
     {
         static void Main(string[] args)
         {
-            // Get XML
-            IRepository repo = new XmlRepository();
-            Config config = repo.GetConfig();
-            config.ValidateTestTitles();
+            var xmlRepositoryAssembly = Assembly.LoadFrom(ConfigurationManager.AppSettings["xmlRepositoryAssemblyPath"]);
+            var xmlRepositoryType = xmlRepositoryAssembly.GetType(ConfigurationManager.AppSettings["xmlRepositoryClassName"]);
+            var xmlConfigInstance = xmlRepositoryAssembly.CreateInstance(xmlRepositoryType.FullName);
 
-            // Print invalid passwords
-            Console.WriteLine(string.Join("\n", config.ValidatePasswords()));
+            var jsonRepositoryAssembly = Assembly.LoadFrom(ConfigurationManager.AppSettings["jsonRepositoryAssemblyPath"]);
+            var jsonRepositoryType = jsonRepositoryAssembly.GetType(ConfigurationManager.AppSettings["jsonRepositoryClassName"]);
+            var jsonConfigInstance = jsonRepositoryAssembly.CreateInstance(jsonRepositoryType.FullName);
 
-            // Print invalid browsers
-            Console.WriteLine("Printed list of incorrect browsers:");
-            Console.WriteLine(string.Join("\n", config.GetIncorrectBrowsers()));
+            // Get deserialized config from XML file
+            var config = xmlRepositoryType.GetMethod(ConfigurationManager.AppSettings["getConfigMethodName"]).Invoke(xmlConfigInstance, null);
 
-            // Convert XML into different JSONs per Browser
-            repo.WriteConfig(config);
-
-            // Get JSON and convert into different XMLs per Browser
-            repo = new JsonRepository();
-            config = repo.GetConfig();
-            repo.WriteConfig(config);
-
-            // Print whole config
-            Console.WriteLine("Printed test configuration:");
-            Console.WriteLine(config.AsString());
+            // Write config to JSON files
+            jsonRepositoryType.GetMethod(ConfigurationManager.AppSettings["writeConfigMethodName"]).Invoke(jsonConfigInstance, new[] { config });
 
             Console.ReadKey();
         }
