@@ -26,6 +26,8 @@ namespace Repository.Extensions
 
                     user.Tests.ForEach(test =>
                     {
+                        cfgString += $"\n\t\tTest {test.Id}: {test.Title}";
+
                         test.Steps.ForEach(step =>
                         {
                             cfgString += $"\n\t\t\t{step.StepNumber}. {step.StepText}";

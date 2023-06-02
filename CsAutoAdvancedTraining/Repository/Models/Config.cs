@@ -1,11 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Repository.Models
 {
     public class Config
     {
-        public string ConfigName { get; set; }
-
-        public List<BrowserConfig> BrowserConfigs { get; set;  }
+        public List<BrowserConfig> BrowserConfigs { get; set; }
     }
 }

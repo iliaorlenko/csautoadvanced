@@ -1,4 +1,6 @@
-﻿using Repository.Enums;
+﻿using System.Collections.Generic;
+using Repository.Enums;
+using Repository.Interfaces;
 
 namespace Repository.Models
 {
